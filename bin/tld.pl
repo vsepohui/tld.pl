@@ -20,7 +20,7 @@ $httpd->reg_cb (
 		my $domain = $req->headers->{host};
 		$domain =~ s/\:\d+$//;
 		$domain =~ s/\.$tld$//;
-		my $url = 'https://metacpan.org/search?size=20&q=' . $domain;
+		my $url = 'https://metacpan.org/search?q=' . $domain . '&lucky=1';
 		$req->respond ([301, '', {'Content-Type' => 'text/plain', 'Location' => $url }]);
 	},
 );
