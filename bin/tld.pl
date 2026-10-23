@@ -1,11 +1,10 @@
 #!/usr/bin/perl
 use Mojolicious::Lite;
 
-use Getopt::Long;
-my $tld;
-GetOptions ("tld"  => \$tld);
+my $tld = $ENV{'TLD'} || 'pl';
+my $port = $ENV{'TLD_PORT'} || '80';
 
-$tld ||= 'pl';
+app->config(hypnotoad => {listen => ['http://*:'.$port]});
 
 any '/' => \&handler;
 any '/*' => \&handler;
