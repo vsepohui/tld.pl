@@ -15,13 +15,13 @@ $tld ||= 'pl';
 
 my $httpd = AnyEvent::HTTPD->new (port => $port);
 $httpd->reg_cb (
-	'/' => sub {
+	'' => sub {
 		my ($httpd, $req) = @_;
 		my $domain = $req->headers->{host};
 		$domain =~ s/\:\d+$//;
 		$domain =~ s/\.$tld$//;
 		my $url = 'https://metacpan.org/search?size=20&q=' . $domain;
-		$req->respond ([301, '', {'Content-Type' => 'text/plain', 'Location' => $url }, $url]);
+		$req->respond ([301, '', {'Content-Type' => 'text/plain', 'Location' => $url }]);
 	},
 );
 $httpd->run;
