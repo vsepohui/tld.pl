@@ -25,3 +25,30 @@ $httpd->reg_cb (
 	},
 );
 $httpd->run;
+
+
+=encoding utf8
+
+=head1 NAME
+
+tld.pl - TLD *.pl redirector to Metacpan
+
+=head1 SYNOPSIS
+
+    Usage: mantra [--port=80] [--tld=pl]
+    
+        tld.pl --port 9090 --tld pl.vsepohui.ru
+    
+    Options:
+    
+        port - Binding port (default: 80)
+        tld  - TLD (default: pl)
+
+=head1 AUTHOR
+
+tld.pl developed by Ivan Trunaev, Russia, 2026
+
+Contacts <ivan@trunaev.ru>
+
+=cut
+
