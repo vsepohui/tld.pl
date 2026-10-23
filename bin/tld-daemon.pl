@@ -39,6 +39,8 @@ tld-daemon.pl - Starting tld.pl daemon
     Usage: tld-daemon.pl [--port=80] [--tld=pl]
     
         tld-daemon.pl --port 9090 --tld pl.vsepohui.ru
+        tld-daemon.pl -s 	Stopping daemon
+        tld-daemon.pl -f 	Foreground run
     
     Options:
     
